@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container p span {
+  font-size: 14px;
+}
+```
+
+The unexpected behavior might arise when a `<span>` element nested within a paragraph (`<p>`) inside a `.container` unexpectedly inherits the `font-size` from the parent `<div>` rather than inheriting from the `<p>` element, resulting in a font size of 16px instead of 14px, due to unexpected specificity handling.
