@@ -1,0 +1,40 @@
+The solution involves using the `!important` flag to enforce the intended style or, preferably, modifying selectors to improve specificity:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container p span {
+  font-size: 14px !important; /* Solution using !important */
+}
+```
+
+Alternatively, a more specific selector could be used for the `<span>`:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container p span {
+  font-size: 14px; /* Solution by increasing specificity */
+}
+```
+The use of `!important` should be minimized to prevent future CSS conflicts.  The preferred approach is to carefully adjust your selector specificity to resolve the issue without using `!important`.
